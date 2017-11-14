@@ -11,7 +11,8 @@ struct Field {
 
 
 void lcs(string X, string Y) {
-	Field C[Y.size()+1][X.size()+1];
+	int s_X = X.size(), s_Y = Y.size();
+	Field C[s_Y + 1][s_X + 1];
 	for(int i = 1; i < X.size(); ++i) {
 		for(int j = 1; j < Y.size(); ++j) {
 			if(Y[j] == X[i]) {
@@ -28,10 +29,23 @@ void lcs(string X, string Y) {
 		}
 	}
 //print outcom
-	cout << C[Y.size()-1][X.size()-1].letter.size() << endl;
-	for(unsigned w = 0; w < C[Y.size()-1][X.size()-1].letter.size(); w++) {
-		cout << C[Y.size()-1][X.size()-1].letter[w] << endl;
+	cout << C[s_Y - 1][s_X - 1].letter.size() << endl;
+	for(unsigned w = 0; w < C[Y.size()-1][X.size()-1].letter.size(); ++w) {
+		cout << C[s_Y - 1][s_X - 1].letter[w] << endl;
 	}
+
+	for(unsigned w = 0; w < s_X; ++w) {
+		for(unsigned v = 0; v < s_Y; ++v) {
+			cout << C[v][w].number << " ";
+			for(unsigned h=0; h < C[v][w].letter.size(); ++h) {
+				cout << C[v][w].letter[h];
+			}
+			cout << endl;
+		}
+		cout << "=======" << endl;
+	}
+	
+	
 }
 
 
