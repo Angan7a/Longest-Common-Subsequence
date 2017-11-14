@@ -26,4 +26,4 @@ In the end we have outcome in the last filed of matrix C
 
 <img src="images/5.png">
 
-In this case the longest common subsequent this example has 3 litters CCG
+In this case the longest common subsequent  has 3 litters - CCG
